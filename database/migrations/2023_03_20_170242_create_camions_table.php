@@ -14,11 +14,11 @@ class CreateCamionsTable extends Migration
     public function up()
     {
         Schema::create('camions', function (Blueprint $table) {
-            $table->id('placa');
+            $table->id();
             $table-> string('placa_camion',6);
             $table->string('marca',25);
             $table->string('color',25);
-            $table->date('model');
+            $table->string('model');
             $table->integer('capacidad_toneladas');
             $table->unsignedBigInteger('transportes_id')->nullable();
             $table->foreign('transportes_id')->references('id')->on('transportes')->onDelete('set null');
